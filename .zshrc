@@ -1,0 +1,1 @@
+/home/cuong/Staff/github/dotfiles/zshrc

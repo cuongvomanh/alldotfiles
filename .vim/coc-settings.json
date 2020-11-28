@@ -1,0 +1,7 @@
+{
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "java.home":"/usr/lib/jvm/java-11-openjdk-amd64",
+  "http.proxy":"http://10.61.11.40:3128",
+  "https.proxy":"http://10.61.11.40:3128"
+}
