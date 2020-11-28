@@ -22,8 +22,8 @@ super + alt + {0-9}
 super + {alt,ctrl,alt + ctrl} + XF86Eject
 	sudo systemctl {suspend,reboot,poweroff}
 
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+#super + {_,shift + }{h,j,k,l}
+#	bspc node -{f,s} {west,south,north,east}
 
 {_,shift + ,super + }XF86MonBrightness{Down,Up}
 	bright {-1,-10,min,+1,+10,max}
@@ -36,8 +36,8 @@ shift + super + L
 super + o ; {e,w,m}
 	{gvim,google-chrome --all_proxy=$http_proxy --no_proxy=$no_proxy,thunderbird}
 
-super + alt + control + {h,j,k,l} ; {0-9}
-	bspc node @{west,south,north,east} -r 0.{0-9}
+#super + alt + control + {h,j,k,l} ; {0-9}
+#	bspc node @{west,south,north,east} -r 0.{0-9}
 
 super + alt + p
 	bspc config focus_follows_pointer {true,false}
