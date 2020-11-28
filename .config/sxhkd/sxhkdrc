@@ -28,6 +28,11 @@ super + {_,shift + }{h,j,k,l}
 {_,shift + ,super + }XF86MonBrightness{Down,Up}
 	bright {-1,-10,min,+1,+10,max}
 
+shift + super + P
+    passmenu
+shift + super + L
+    echo RELOADAGENT | gpg-connect-agent && slock
+
 super + o ; {e,w,m}
 	{gvim,google-chrome --all_proxy=$http_proxy --no_proxy=$no_proxy,thunderbird}
 
