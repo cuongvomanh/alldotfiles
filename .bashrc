@@ -1,6 +1,8 @@
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias configp='/usr/bin/git --git-dir=$HOME/myprivate --work-tree=$HOME'
 alias M='url=$url bash ~/user_settings/server/connect_and_mount_server.sh'
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH=$PATH:/home/cuong/.scripts/:/home/cuong/.scripts/statusbar
 #fzf-note-widget() {
   #local selected num
   #setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
