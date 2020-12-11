@@ -1,0 +1,18 @@
+#eval `cat ~/NOTE/cmd | fzf`
+kafka-topics.sh --bootstrap-server $BROKER --list | fzf | xargs -i kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list $BROKER -topic '{}' --time -1
+kafka-console-producer.sh --bootstrap-server $BROKER --topic `kafka-topics.sh --bootstrap-server $BROKER --list | fzf`
+kafka-topics.sh --bootstrap-server $BROKER --list | grep -v 'conflu\|offsets'
+kafka-topics.sh --bootstrap-server $BROKER --list | grep -v 'conflu\|offsets' | xargs -i kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list $BROKER -topic '{}' --time -1
+kafka-console-consumer.sh --bootstrap-server $BROKER --topic `kafka-topics.sh --bootstrap-server $BROKER --list | fzf` --from-beginning
+kafka-consumer-groups.sh  --bootstrap-server $BROKER --list
+kafka-consumer-groups.sh  --bootstrap-server $BROKER --list | fzf | xargs kafka-consumer-groups.sh  --bootstrap-server $BROKER --describe --group
+kafka-consumer-groups.sh  --bootstrap-server $BROKER --list | fzf | xargs -i kafka-consumer-groups.sh --bootstrap-server $BROKER --group '{}' --reset-offsets  --to-earliest --all-topics --execute
+kafka-consumer-groups.sh  --bootstrap-server $BROKER --list | fzf | xargs -i kafka-consumer-groups.sh --bootstrap-server $BROKER --group '{}' --reset-offsets  --to-latest --all-topics --execute
+kafka-topics.sh --create  --bootstrap-server $BROKER --topic 
+hadoop fs -ls hdfs://172.18.0.2:8020/
+echo "hello world" | hdfs dfs -put - hdfs://localhost:8020/tmp/hello_world.txt
+hdfs dfs -cat hdfs://172.18.0.2:8020/tmp/hello_world.txt
+hdfs dfs -du -h hdfs://localhost:8020/tmp/
+hdfs dfs -copyToLocal hdfs://localhost:8020/tmp/hdfs-site.xml ./
+beeline -u 'jdbc:hive2://sandbox-hdp.hortonworks.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2' -n hive -p hive
+hdfs dfs -chown hive:hdfs /tmp/data.csv

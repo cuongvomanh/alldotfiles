@@ -1,0 +1,5 @@
+flameshot gui
+google-chrome
+ps -ef | rofi -dmenu | awk '{print $2}' | xargs kill -9
+sqldeveloper &
+cd /opt/idea-IU-201.7223.91/bin/ && ./idea.sh &
