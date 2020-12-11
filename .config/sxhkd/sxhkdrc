@@ -32,6 +32,10 @@ shift + super + P
     passmenu
 shift + super + L
     echo RELOADAGENT | gpg-connect-agent && slock
+shift + super + K
+    cm=`cat ~/NOTE/cmd_hidden | rofi -dmenu rofi -sorting-method fzf`; eval $cm
+shift + super + R
+    rofi -show drun -sorting-method fzf
 
 super + o ; {e,w,m}
 	{gvim,google-chrome --all_proxy=$http_proxy --no_proxy=$no_proxy,thunderbird}
