@@ -3,4 +3,4 @@ dwmblocks &
 feh --bg-scale /home/cuong/.staff/images/ffeab7da0cd51a4a3f6f86e5a857a737.jpg
 ibus-daemon restart &
 export _JAVA_AWT_WM_NONREPARENTING=1
-xautolock -time 1 -locker slock &
+xautolock -time 5 -locker slock &
